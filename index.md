@@ -17,7 +17,7 @@ layout: splash
 {% endif %}
 
 More about the working group, including its charter, is on the
-[CASS website](https://cass.community/working-groups/software-ecosystem/).
+[CASS website](https://cass.community/working-groups/software-ecosystem).
 
 ## Ways we gather
 
