@@ -86,3 +86,48 @@
   font-size: 0.8em;
   color: $muted-text-color;
 }
+
+/* Tiles on the main page */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: 1.25em;
+  margin: 1.5em 0;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  border: 1px solid $border-color;
+  border-top: 4px solid $primary-color;
+  border-radius: $border-radius;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+  p { margin: 0 0 0.75em; }
+}
+
+.tile__icon {
+  margin-bottom: 0.4em;
+  font-size: 2em;
+  color: $primary-color;
+}
+
+.tile__title {
+  margin: 0 0 0.5em;
+  font-size: 1.2em;
+}
+
+.tile__meta {
+  margin-top: auto !important;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $muted-text-color;
+}
+
+.tile--invite {
+  background: mix($primary-color, #fff, 8%);
+}

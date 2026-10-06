@@ -21,16 +21,26 @@ More about the working group, including its charter, is on the
 
 ## Ways we gather
 
-**Talks and panels.** Webinars and panel discussions on topics of interest to
-the community. Each one has its own page with slides and, where participants
-agree, a summary.
-
-**Working group sessions.** Working meetings where members dig into the
-season's theme together. The season page carries a loose running agenda.
-
-**Tea time.** A standing invitation: monthly, 30 minutes, drop in. It is
-deliberately informal. There is no recording, no notes, and no archive, so
-come and think out loud. Tea time has its own mailing list.
+<div class="tiles">
+  <div class="tile">
+    <i class="fa-solid fa-fw fa-chalkboard-user tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Talks and panels</h3>
+    <p>Webinars and panel discussions on topics of interest to the community. Each one has its own page with slides and, where participants agree, a summary.</p>
+    <p class="tile__meta">Archived</p>
+  </div>
+  <div class="tile">
+    <i class="fa-solid fa-fw fa-people-group tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Working group sessions</h3>
+    <p>Working meetings where members dig into the season's theme together. The season page carries a loose running agenda.</p>
+    <p class="tile__meta">Light notes</p>
+  </div>
+  <div class="tile tile--invite">
+    <i class="fa-solid fa-fw fa-mug-hot tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Tea time</h3>
+    <p>A standing invitation. Drop in and think out loud. There is no recording, no notes, and no archive. Tea time has its own mailing list.</p>
+    <p class="tile__meta">Monthly &middot; 30 minutes &middot; drop in</p>
+  </div>
+</div>
 
 **Schedule:** {{ up.meeting_schedule }}.
 
