@@ -41,7 +41,10 @@ come and think out loud. Tea time has its own mailing list.
 {%- for s in site.series %}
   {{ s.name }}: {% if s.zoom contains "http" %}[join]({{ s.zoom }}){% else %}**{{ s.zoom }}** (Zoom link to be added){% endif %}{% unless forloop.last %};{% endunless %}
 {%- endfor %}
-- **Calendar:** TODO: downloadable ICS files for the recurring gatherings (added with the calendar files in Phase 3). We do not send shared calendar invites; import the files yourself.
+- **Calendar:** download and import these into your own calendar app. We do not send shared invites.
+{%- for c in site.data.series_ics %}
+  {% if c.url %}[{{ c.name }} (.ics)]({{ c.url }}){% else %}{{ c.name }}: TODO (schedule to be added){% endif %}{% unless forloop.last %};{% endunless %}
+{%- endfor %}
 
 Questions? Ask on the working group mailing list.
 

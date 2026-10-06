@@ -17,7 +17,7 @@ upstream_metadata:
   url: https://raw.githubusercontent.com/cass-community/cass-community.github.io/main/_working-groups/software-ecosystem.md   # front matter of this WG's page
 
 current_season: 2026-27
-timezone: America/Chicago     # TODO: confirm; cass.community schedules this WG in Eastern time (America/New_York)
+timezone: America/New_York    # cass.community schedules this WG in Eastern time; TODO: confirm
 
 # Links to Slack and the two groups.io lists come from cass.community; these
 # are the labels of this WG's entries in its additional_resource_links.
@@ -26,16 +26,26 @@ upstream_link_labels:
   mailing_list: "Working group mail list"
   teatime_list: "Teatime mail list"
 
-series:                       # recurring gatherings -> series ICS files
+# Recurring gatherings -> series ICS files (/calendar/<id>.ics). Times are in the
+# site timezone. rrule and start_time below follow the schedule text on
+# cass.community (Teatimes 4-4:30 pm ET third Thursday; working meetings 12-1 pm ET
+# first Monday of odd months); TODO: confirm. Series whose rrule or start_time is
+# TODO get no ICS file. An unset zoom omits the location from the ICS.
+# Supported rrule shape: FREQ=MONTHLY;BYDAY=<1-4><SU|MO|TU|WE|TH|FR|SA>[;BYMONTH=m,m,...]
+# For other patterns, set first_date (YYYY-MM-DD) on the series.
+series:
   - id: teatime
     name: "CASS Software Ecosystem Tea Time"
     zoom: TODO
-    rrule: TODO               # e.g. FREQ=MONTHLY;BYDAY=3TH
-    start_time: TODO          # local HH:MM
+    rrule: "FREQ=MONTHLY;BYDAY=3TH"
+    start_time: "16:00"
     duration_minutes: 30
   - id: working-group
-    name: "CASS Software Ecosystem Working Group"
+    name: "CASS Software Ecosystem Working Group Session"
     zoom: TODO
-    rrule: TODO               # remove this entry if sessions don't recur on a fixed pattern
-    start_time: TODO
+    rrule: "FREQ=MONTHLY;BYDAY=1MO;BYMONTH=1,3,5,7,9,11"
+    start_time: "12:00"
     duration_minutes: 60
+
+# Series whose Zoom link is used for the per-event ICS files
+event_zoom_series: working-group

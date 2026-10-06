@@ -33,12 +33,14 @@ module WgEcosystem
     def generate(site)
       @site = site
       by_season = Hash.new { |h, k| h[k] = [] }
+      site.data["events_all"] = []
 
       Dir.glob(File.join(site.source, "seasons", "*", "events", "*.md")).sort.each do |path|
         next if File.basename(path).start_with?("_")
 
         event = load_event(path)
         by_season[event["season"]] << event
+        site.data["events_all"] << event
         site.pages << build_page(site, event)
       end
 

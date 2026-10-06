@@ -16,6 +16,10 @@ layout: single
 {{ content }}
 {% endif %}
 
+{% if e.ics_url %}
+<p><a href="{{ e.ics_url }}"><i class="fas fa-fw fa-calendar-plus" aria-hidden="true"></i> Add to your calendar</a></p>
+{% endif %}
+
 <p><a class="btn btn--primary" href="{{ site.data.upstream.links.mailing_list }}">Continue the conversation</a>
 on the working group mailing list.</p>
 
