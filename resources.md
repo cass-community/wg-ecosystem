@@ -8,7 +8,8 @@ group finds valuable. It is not tied to any season. Newest first.
 <ul class="resource-list">
 {%- for r in site.data.resources_all %}
   <li class="resource" data-kind="{{ r.kind }}" data-tags="{{ r.tags | join: ',' }}">
-    {% if r.href contains "http" or r.href contains "/resources/" -%}
+    {% assign h4 = r.href | slice: 0, 4 -%}
+    {% if h4 == "http" or h4 == "/wg-" or h4 == "/res" -%}
     <a class="resource__title" href="{{ r.href }}">{{ r.title }}</a>
     {%- else -%}
     <span class="resource__title">{{ r.title }} (link to be added)</span>
