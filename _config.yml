@@ -1,0 +1,69 @@
+# Jekyll settings. Group-specific settings (title, timezone, links, series)
+# live in site.config.yml, which is loaded as a second config file:
+#   bundle exec jekyll build --config _config.yml,site.config.yml
+# Run bin/prebuild first; it fetches the cass.community metadata.
+
+url: "https://cass.community"
+baseurl: "/wg-ecosystem"
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "air"
+logo: /assets/images/cass-logo.png
+og_image: /assets/images/cass-logo.png
+breadcrumbs: false
+atom_feed:
+  hide: true
+repository: cass-community/wg-ecosystem
+repo_host: https://github.com
+github_username: CASS-Community
+
+# Show events dated in the future (Phase 2)
+future: true
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-link-attributes
+
+external_links:
+  enabled: true
+  rel: external noopener
+  target: _blank
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      classes: wide no-left-sidebar
+      author_profile: false
+      comments: false
+      share: false
+      toc: false
+
+footer:
+  links:
+    - label: "CASS home"
+      icon: "fas fa-fw fa-house"
+      url: https://cass.community
+    - label: "YouTube"
+      icon: "fa-brands fa-youtube"
+      url: https://www.youtube.com/@CASS.community
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/CASS-Community"
+
+# Authoring scaffolding and docs are not site content. Event and resource
+# files are handled by their own pages (Phases 2 and 4).
+exclude:
+  - CLAUDE.md
+  - README.md
+  - docs/
+  - bin/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - site.config.yml
+  - seasons/*/events/*
+  - resources/

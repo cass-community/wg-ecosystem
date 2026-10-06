@@ -1,0 +1,41 @@
+# Group-specific settings for the CASS Software Ecosystem Working Group site.
+# Everything particular to this working group lives here, so the repo can later
+# serve as a template for other CASS working groups.
+#
+# Precedence: if the cass.community metadata already provides a value
+# (e.g. Zoom link or schedule), use that and leave the field here unset.
+
+title: "CASS Software Ecosystem Working Group"
+# Optional short local intro, shown after the upstream description. Leave empty to omit.
+intro: ""
+
+group:
+  slug: wg-ecosystem
+  upstream_key: software-ecosystem   # _working-groups/<key>.md in cass.community
+
+upstream_metadata:
+  url: https://raw.githubusercontent.com/cass-community/cass-community.github.io/main/_working-groups/software-ecosystem.md   # front matter of this WG's page
+
+current_season: 2026-27
+timezone: America/Chicago     # TODO: confirm; cass.community schedules this WG in Eastern time (America/New_York)
+
+# Links to Slack and the two groups.io lists come from cass.community; these
+# are the labels of this WG's entries in its additional_resource_links.
+upstream_link_labels:
+  slack_channel: "Slack channel"
+  mailing_list: "Working group mail list"
+  teatime_list: "Teatime mail list"
+
+series:                       # recurring gatherings -> series ICS files
+  - id: teatime
+    name: "CASS Software Ecosystem Tea Time"
+    zoom: TODO
+    rrule: TODO               # e.g. FREQ=MONTHLY;BYDAY=3TH
+    start_time: TODO          # local HH:MM
+    duration_minutes: 30
+  - id: working-group
+    name: "CASS Software Ecosystem Working Group"
+    zoom: TODO
+    rrule: TODO               # remove this entry if sessions don't recur on a fixed pattern
+    start_time: TODO
+    duration_minutes: 60
