@@ -57,3 +57,32 @@
 
 .event-page__meta span { display: block; margin-bottom: 0.2em; }
 .event-page__meta .event-card__badge { display: inline-block; }
+
+/* Resource library */
+.resource-list {
+  list-style: none;
+  margin: 1.5em 0;
+  padding: 0;
+}
+
+.resource {
+  padding: 1em 0;
+  border-bottom: 1px solid $border-color;
+
+  span, a.resource__title { display: block; }
+}
+
+.resource__title { font-size: 1.1em; font-weight: bold; }
+.resource__meta { font-size: 0.9em; color: $muted-text-color; margin: 0.2em 0; }
+.resource__related { font-size: 0.9em; margin-top: 0.3em; }
+
+.resource__tags { margin-top: 0.4em; }
+.resource__tag {
+  display: inline-block !important;
+  margin: 0 0.4em 0.3em 0;
+  padding: 0 0.6em;
+  border: 1px solid $border-color;
+  border-radius: 1em;
+  font-size: 0.8em;
+  color: $muted-text-color;
+}

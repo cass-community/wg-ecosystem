@@ -55,7 +55,8 @@ footer:
       url: "https://github.com/CASS-Community"
 
 # Authoring scaffolding and docs are not site content. Event and resource
-# files are handled by their own pages (Phases 2 and 4).
+# Markdown files are handled by their plugins; the artifact and file folders
+# beside them are copied as static files.
 exclude:
   - CLAUDE.md
   - README.md
@@ -66,4 +67,4 @@ exclude:
   - vendor/
   - site.config.yml
   - seasons/*/events/*.md
-  - resources/
+  - resources/*.md
