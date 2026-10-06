@@ -1,0 +1,8 @@
+---
+# Only the main Sass path needs front matter (dashes are enough)
+search: false
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+@import "wg-site";

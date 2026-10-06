@@ -1,0 +1,59 @@
+/* Event cards and event pages. Colors come from the minimal-mistakes skin. */
+
+.event-list {
+  display: grid;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.event-card {
+  display: block;
+  padding: 1em 1.25em;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: #fff;
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    border-color: $link-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+  }
+
+  span { display: block; }
+}
+
+.event-card__title {
+  margin: 0.4em 0 0.1em;
+  font-size: 1.15em;
+  font-weight: bold;
+  color: $link-color;
+}
+
+.event-card__date,
+.event-card__people {
+  font-size: 0.9em;
+  color: $muted-text-color;
+}
+
+.event-card__desc { margin-top: 0.5em; }
+
+.event-card__badge {
+  display: inline-block !important;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: $primary-color;
+}
+
+.event-card__badge--panel { background: #5b4b8a; }
+.event-card__badge--working-group-session { background: #2e7d5b; }
+
+.event-page__meta span { display: block; margin-bottom: 0.2em; }
+.event-page__meta .event-card__badge { display: inline-block; }

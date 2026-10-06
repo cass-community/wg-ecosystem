@@ -1,0 +1,22 @@
+---
+layout: single
+---
+{% assign e = page.event %}
+<div class="event-page__meta">
+  <span class="event-card__badge event-card__badge--{{ e.type }}">{{ e.type_label }}</span>
+  <span class="event-card__date">{{ e.date_display }}</span>
+  {% include event-people.html people=e.people %}
+</div>
+
+<p>{{ e.description }}</p>
+
+{% assign body = content | strip_html | strip %}
+{% if body != "" %}
+<h2 id="artifacts">Artifacts</h2>
+{{ content }}
+{% endif %}
+
+<p><a class="btn btn--primary" href="{{ site.data.upstream.links.mailing_list }}">Continue the conversation</a>
+on the working group mailing list.</p>
+
+<p><a href="{{ '/seasons/' | append: e.season | append: '/' | relative_url }}">&larr; Back to season {{ e.season }}</a></p>

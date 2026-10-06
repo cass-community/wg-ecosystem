@@ -65,5 +65,5 @@ exclude:
   - Gemfile.lock
   - vendor/
   - site.config.yml
-  - seasons/*/events/*
+  - seasons/*/events/*.md
   - resources/
