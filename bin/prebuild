@@ -87,7 +87,8 @@ season_file = File.join(ROOT, "seasons", season, "season.md")
 fail_build("current_season is '#{season}' but #{season_file} does not exist") unless File.exist?(season_file)
 
 nav = [
-  { "title" => "Home", "url" => "/" },
+  { "title" => "CASS Home", "url" => "https://cass.community" },
+  { "title" => "Ecosystem WG", "url" => "/" },
   { "title" => "Current season", "url" => "/seasons/#{season}/" },
   { "title" => "Resources", "url" => "/resources/" }
 ]
