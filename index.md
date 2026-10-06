@@ -46,34 +46,64 @@ More about the working group, including its charter, is on the
 
 ## How to plug in
 
-- **Slack:** the [working group channel]({{ up.links.slack_channel }}) in the CASS Slack workspace.
-- **Mailing list:** the [working group list]({{ up.links.mailing_list }}) on groups.io. Announcements and follow-up conversation happen here.
-- **Tea time list:** the separate [tea time list]({{ up.links.teatime_list }}) on groups.io.
-- **Zoom:**
+<div class="tiles">
+  <a class="tile tile--link" href="{{ up.links.slack_channel }}">
+    <i class="fa-brands fa-fw fa-slack tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Slack</h3>
+    <p>Chat with the group in the working group channel in the CASS Slack workspace.</p>
+    <p class="tile__meta">Open the channel &rarr;</p>
+  </a>
+  <a class="tile tile--link" href="{{ up.links.mailing_list }}">
+    <i class="fa-solid fa-fw fa-envelopes-bulk tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Working group list</h3>
+    <p>Announcements and follow-up conversation happen on this groups.io list.</p>
+    <p class="tile__meta">Join on groups.io &rarr;</p>
+  </a>
+  <a class="tile tile--link" href="{{ up.links.teatime_list }}">
+    <i class="fa-solid fa-fw fa-mug-hot tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Tea time list</h3>
+    <p>A separate groups.io list for the informal monthly tea time.</p>
+    <p class="tile__meta">Join on groups.io &rarr;</p>
+  </a>
+  <div class="tile">
+    <i class="fa-solid fa-fw fa-video tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Zoom</h3>
+    <ul class="tile__list">
 {%- for s in site.series %}
-  {{ s.name }}: {% if s.zoom contains "http" %}[join]({{ s.zoom }}){% else %}**{{ s.zoom }}** (Zoom link to be added){% endif %}{% unless forloop.last %};{% endunless %}
+      <li>{{ s.name }}: {% if s.zoom contains "http" %}<a href="{{ s.zoom }}">join</a>{% else %}<strong>{{ s.zoom }}</strong> (Zoom link to be added){% endif %}</li>
 {%- endfor %}
-- **Calendar:** download and import these into your own calendar app. We do not send shared invites.
+    </ul>
+  </div>
+  <div class="tile">
+    <i class="fa-solid fa-fw fa-calendar-plus tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">Add to your calendar</h3>
+    <p>Download and import into your own calendar app. We do not send shared invites.</p>
+    <ul class="tile__list">
 {%- for c in site.data.series_ics %}
-  {% if c.url %}[{{ c.name }} (.ics)]({{ c.url }}){% else %}{{ c.name }}: TODO (schedule to be added){% endif %}{% unless forloop.last %};{% endunless %}
+      <li>{% if c.url %}<a href="{{ c.url }}">{{ c.name }} (.ics)</a>{% else %}{{ c.name }}: TODO (schedule to be added){% endif %}</li>
 {%- endfor %}
+    </ul>
+  </div>
+</div>
 
 Questions? Ask on the working group mailing list.
 
-## Current season
+## Seasons
 
-{% assign cur = site.pages | where_exp: "p", "p.path contains site.current_season" | where_exp: "p", "p.path contains 'season.md'" | first %}
-{% if cur %}
-**[{{ cur.label }}: {{ cur.theme }}]({{ cur.url | relative_url }})**
-{% else %}
-TODO: season page for {{ site.current_season }} not found.
-{% endif %}
+Each season has a theme, a loose running agenda, and a page for every event.
 
-## Past seasons
-
-{% assign past = site.pages | where_exp: "p", "p.path contains 'season.md'" | where_exp: "p", "p.label" | sort: "starts" | reverse %}
-{% assign shown = 0 %}
-{% for p in past %}{% unless p.path contains site.current_season %}
-- [{{ p.label }}: {{ p.theme }}]({{ p.url | relative_url }})
-{% assign shown = shown | plus: 1 %}{% endunless %}{% endfor %}
-{% if shown == 0 %}None yet.{% endif %}
+{% assign seasons = site.pages | where_exp: "p", "p.path contains 'season.md'" | where_exp: "p", "p.label" | sort: "starts" | reverse -%}
+<div class="tiles">
+{%- for p in seasons %}
+{%- assign is_current = false %}{% if p.path contains site.current_season %}{% assign is_current = true %}{% endif %}
+  <a class="tile tile--link{% if is_current %} tile--invite{% endif %}" href="{{ p.url | relative_url }}">
+    <i class="fa-solid fa-fw {% if is_current %}fa-seedling{% else %}fa-box-archive{% endif %} tile__icon" aria-hidden="true"></i>
+    <h3 class="tile__title">{{ p.label }}</h3>
+    <p>{{ p.theme }}</p>
+    <p class="tile__meta">{% if is_current %}Current season{% else %}Past season{% endif %} &rarr;</p>
+  </a>
+{%- endfor %}
+</div>
+{% unless seasons.size > 1 %}
+<p class="muted">Past seasons will be listed here.</p>
+{% endunless %}

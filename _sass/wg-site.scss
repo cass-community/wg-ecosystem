@@ -131,3 +131,22 @@
 .tile--invite {
   background: mix($primary-color, #fff, 8%);
 }
+
+.tile--link {
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    border-color: $link-color;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+  }
+
+  .tile__title { color: $link-color; }
+}
+
+.tile__list {
+  margin: 0 0 0.75em;
+  padding-left: 1.1em;
+}
