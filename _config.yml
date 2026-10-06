@@ -41,6 +41,9 @@ defaults:
       comments: false
       share: false
       toc: false
+      header:
+        overlay_filter: rgba(0, 146, 202, 0.75) # same blue as cass.community's "air" skin footer
+        overlay_image: /assets/images/cass-word-1280x384-transparent.png
 
 footer:
   links:

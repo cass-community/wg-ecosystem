@@ -147,6 +147,9 @@ module WgEcosystem
       page.content = event["body"]
       page.data.merge!(
         "layout" => "event",
+        "header" => { "overlay_filter" => "rgba(0, 146, 202, 0.75)",
+                      "overlay_image" => "/assets/images/cass-word-1280x384-transparent.png" },
+        "classes" => "wide no-left-sidebar",
         "title" => event["title"],
         "event" => event,
         "season_label" => event["season"]

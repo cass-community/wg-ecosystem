@@ -1,6 +1,8 @@
 ---
-title: "CASS Software Ecosystem Working Group"
+title: "CASS Software Ecosystem"
+excerpt: "A Working Group of the Consortium for the Advancement of Scientific Software"
 permalink: /
+layout: splash
 ---
 {% assign up = site.data.upstream %}
 {% assign first = up.description | slice: 0, 1 | upcase %}
