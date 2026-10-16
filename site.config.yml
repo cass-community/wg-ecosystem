@@ -17,7 +17,7 @@ upstream_metadata:
   url: https://raw.githubusercontent.com/cass-community/cass-community.github.io/main/_working-groups/software-ecosystem.md   # front matter of this WG's page
 
 current_season: 2026-27
-timezone: America/New_York    # cass.community schedules this WG in Eastern time; TODO: confirm
+timezone: America/New_York    # cass.community schedules this WG in Eastern time
 
 # Links to Slack and the two groups.io lists come from cass.community; these
 # are the labels of this WG's entries in its additional_resource_links.
@@ -29,21 +29,21 @@ upstream_link_labels:
 # Recurring gatherings -> series ICS files (/calendar/<id>.ics). Times are in the
 # site timezone. rrule and start_time below follow the schedule text on
 # cass.community (Teatimes 4-4:30 pm ET third Thursday; working meetings 12-1 pm ET
-# first Monday of odd months); TODO: confirm. Series whose rrule or start_time is
+# first Monday of odd months; webinars 12-1 pm ET first Monday of even months, so one first-Monday series), confirmed against the Zoom invites. Series whose rrule or start_time is
 # TODO get no ICS file. An unset zoom omits the location from the ICS.
 # Supported rrule shape: FREQ=MONTHLY;BYDAY=<1-4><SU|MO|TU|WE|TH|FR|SA>[;BYMONTH=m,m,...]
 # For other patterns, set first_date (YYYY-MM-DD) on the series.
 series:
   - id: teatime
     name: "CASS Software Ecosystem Tea Time"
-    zoom: TODO
+    zoom: "https://us06web.zoom.us/j/89742669029?pwd=qI1pDe182OZpGurmnthI02oyxAarVz.1"
     rrule: "FREQ=MONTHLY;BYDAY=3TH"
     start_time: "16:00"
     duration_minutes: 30
-  - id: working-group
-    name: "CASS Software Ecosystem Working Group Session"
-    zoom: TODO
-    rrule: "FREQ=MONTHLY;BYDAY=1MO;BYMONTH=1,3,5,7,9,11"
+  - id: working-group      # webinars (even months) and working meetings (odd months) share one Zoom meeting
+    name: "CASS Software Ecosystem Webinars and Working Meetings"
+    zoom: "https://us06web.zoom.us/j/89705895319?pwd=bwjzBBohZlvgYmPYkc1MHdrMMSTeKl.1"
+    rrule: "FREQ=MONTHLY;BYDAY=1MO"
     start_time: "12:00"
     duration_minutes: 60
 

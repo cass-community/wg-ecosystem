@@ -120,10 +120,7 @@ source must be set to **GitHub Actions** (Settings, Pages).
 
 ## Still to fill in (search for `TODO`)
 
-- Zoom links and confirmed schedules and timezone (`site.config.yml`)
-- Season intro and running agenda (`seasons/2026-27/season.md`)
-- Agent Skills panel details, slides and approved summary
-- Real resource entries (replace `resources/example-resource.md`)
+Nothing outstanding. New placeholders should stay visible as `TODO`.
 
 ## Claude skill (optional)
 
