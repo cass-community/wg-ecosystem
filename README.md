@@ -34,7 +34,8 @@ and [docs/WORK_PACKAGE.md](docs/WORK_PACKAGE.md) for the original spec.
    `seasons/<season>/events/YYYY-MM-DD-short-slug.md`.
 2. Fill in the front matter: `title`, `type` (`talk`, `panel`, or
    `working-group-session`), `date`, `people` (each with `name`, `role` =
-   `presenter`/`panelist`/`moderator`, optional `affiliation`), `description`.
+   `presenter`/`panelist`/`moderator`, optional `affiliation`; may be left
+   out for a `working-group-session`), `description`.
    Add `duration_minutes` if not 60.
 3. Use `date: 2026-11-12` for a date only, or `date: 2026-11-12T12:00` (site
    timezone) to get an "Add to your calendar" link.

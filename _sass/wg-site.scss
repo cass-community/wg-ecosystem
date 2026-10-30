@@ -58,6 +58,24 @@
 .event-page__meta span { display: block; margin-bottom: 0.2em; }
 .event-page__meta .event-card__badge { display: inline-block; }
 
+/* Meetings shortcut on the main page */
+.meetings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 1.25em;
+  margin: 1.5em 0 1em;
+
+  .event-card { height: 100%; }
+}
+
+.meetings__label {
+  margin: 0 0 0.5em;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $muted-text-color;
+}
+
 /* Resource library */
 .resource-list {
   list-style: none;

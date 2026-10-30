@@ -5,17 +5,20 @@ layout: single
 <div class="event-page__meta">
   <span class="event-card__badge event-card__badge--{{ e.type }}">{{ e.type_label }}</span>
   <span class="event-card__date">{{ e.date_display }}</span>
-  {% include event-people.html people=e.people %}
+  {% if e.people.size > 0 %}{% include event-people.html people=e.people %}{% endif %}
 </div>
 
 <p>{{ e.description }}</p>
 
 {% assign body = content | strip_html | strip %}
 {% if body != "" %}
-<h2 id="artifacts">Artifacts</h2>
+<h2 id="artifacts">Materials</h2>
 {{ content }}
 {% endif %}
 
+{% if e.zoom_url %}
+<p><a href="{{ e.zoom_url }}"><i class="fas fa-fw fa-video" aria-hidden="true"></i> Join on Zoom</a></p>
+{% endif %}
 {% if e.ics_url %}
 <p><a href="{{ e.ics_url }}"><i class="fas fa-fw fa-calendar-plus" aria-hidden="true"></i> Add to your calendar</a></p>
 {% endif %}

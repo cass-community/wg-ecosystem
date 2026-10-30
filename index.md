@@ -3,10 +3,40 @@ title: "CASS Software Ecosystem"
 excerpt: "A Working Group of the Consortium for the Advancement of Scientific Software"
 permalink: /
 layout: splash
+header:
+  actions:
+    - label: "Next meeting and recent materials"
+      url: "#meetings"
 ---
 {% assign up = site.data.upstream %}
 {% assign first = up.description | slice: 0, 1 | upcase %}
 {% assign rest = up.description | slice: 1, 10000 %}
+{% assign season_url = '/seasons/' | append: site.current_season | append: '/' | relative_url %}
+
+## Meetings {#meetings}
+
+<div class="meetings">
+  <div>
+    <h3 class="meetings__label">Next up</h3>
+{%- assign next = site.data.events_upcoming | first %}
+{%- if next %}
+    {% include event-card.html event=next %}
+{%- else %}
+    <p>No upcoming events announced yet.</p>
+{%- endif %}
+  </div>
+  <div>
+    <h3 class="meetings__label">Most recent</h3>
+{%- assign last = site.data.events_past | first %}
+{%- if last %}
+    {% include event-card.html event=last %}
+{%- else %}
+    <p>Nothing yet.</p>
+{%- endif %}
+  </div>
+</div>
+
+[All upcoming meetings]({{ season_url }}#upcoming) &middot; [All past meetings and materials]({{ season_url }}#past)
 
 ## What the working group is
 

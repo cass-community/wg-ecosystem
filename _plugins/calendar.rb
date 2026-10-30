@@ -69,6 +69,7 @@ module WgEcosystem
                     minutes: e["duration_minutes"], zoom: zoom, description: e["description"], link: page_url)
         add_file(site, "calendar", "#{e['slug']}.ics", calendar(ev))
         e["ics_url"] = "#{site.baseurl}/calendar/#{e['slug']}.ics"
+        e["zoom_url"] = zoom if zoom
       end
     end
 

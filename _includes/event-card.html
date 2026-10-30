@@ -3,6 +3,6 @@
   <span class="event-card__badge event-card__badge--{{ e.type }}">{{ e.type_label }}</span>
   <span class="event-card__title">{{ e.title }}</span>
   <span class="event-card__date">{{ e.date_display }}</span>
-  {%- include event-people.html people=e.people -%}
+  {%- if e.people.size > 0 %}{% include event-people.html people=e.people %}{% endif -%}
   <span class="event-card__desc">{{ e.description }}</span>
 </a>

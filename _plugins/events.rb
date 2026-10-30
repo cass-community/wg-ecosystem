@@ -2,7 +2,8 @@
 
 # Turns seasons/<season>/events/*.md into event pages and attaches the
 # upcoming/past lists to each season page. Validates front matter and aborts
-# the build with a message naming the file and field.
+# the build with a message naming the file and field. Also sets
+# site.data events_upcoming / events_past (all seasons) for the home page.
 #
 # Files starting with "_" (e.g. _template.md) are ignored. Artifacts live in a
 # folder beside the event file with the same name (minus .md); Jekyll copies
@@ -44,10 +45,14 @@ module WgEcosystem
         site.pages << build_page(site, event)
       end
 
+      now = Time.now
+      upcoming, past = site.data["events_all"].partition { |e| e["ends_at"] > now }
+      site.data["events_upcoming"] = upcoming.sort_by { |e| e["starts_at"] }
+      site.data["events_past"] = past.sort_by { |e| e["starts_at"] }.reverse
+
       site.pages.select { |p| p.path.match?(%r{\Aseasons/[^/]+/season\.md\z}) }.each do |page|
         season = page.path.split("/")[1]
         events = by_season[season]
-        now = Time.now
         upcoming, past = events.partition { |e| e["ends_at"] > now }
         page.data["layout"] = "season"
         page.data["upcoming"] = upcoming.sort_by { |e| e["starts_at"] }
@@ -68,7 +73,10 @@ module WgEcosystem
       end
       WgEcosystem.fail_file(rel, "front matter must be a set of key: value pairs") unless fm.is_a?(Hash)
 
-      %w[title type date people description].each do |f|
+      # Working group sessions are member-led, so they may have no listed people.
+      required = %w[title type date description]
+      required << "people" unless fm["type"] == "working-group-session"
+      required.each do |f|
         v = fm[f]
         WgEcosystem.fail_file(rel, "missing required field '#{f}'") if v.nil? || (v.respond_to?(:empty?) && v.empty?) || v.to_s.strip.empty?
       end
@@ -83,7 +91,7 @@ module WgEcosystem
       end
       ends_at = timed ? starts_at + duration * 60 : starts_at + 86_400 # date-only: through end of that day
 
-      people = validate_people(rel, fm["people"])
+      people = validate_people(rel, fm["people"] || [])
 
       slug = File.basename(path, ".md")
       season = path.split("/")[-3]

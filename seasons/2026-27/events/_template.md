@@ -5,7 +5,7 @@ title: ""
 type: talk                  # talk | panel | working-group-session
 date: 2026-MM-DD            # add a time for a calendar link: 2026-MM-DDTHH:MM (site timezone)
 duration_minutes: 60        # optional
-people:                     # presenter(s) or panelists
+people:                     # presenter(s) or panelists; optional for working-group-session
   - name: ""
     role: presenter         # presenter | panelist | moderator
     affiliation: ""         # optional
