@@ -7,7 +7,7 @@ date: 2026-10-15
 url: "https://gitlab.osti.gov/genesis/genesis-skills"
 file: ""
 tags: [agent-skills, genesis-mission, hpc, scientific-workflows, doe]
-related_event: ""
+related_event: "2026-12-07-genesis-skills-webinar"
 description: >
   The Genesis Mission's catalog of portable agent skills for science and engineering, covering
   literature search, HPC, plasma simulation, scientific-data metadata, and AI-system evaluation.

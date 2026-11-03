@@ -23,3 +23,10 @@ Drawn from the open questions in the [Agent Skills Panel]({{ '/seasons/2026-27/e
 - **Skills as a way to transfer expertise.** Curated knowledge bases and user-facing skills, where encoding expert judgment seems to pay off most.
 - **What a library is worth.** How a library's value changes when a user can re-implement a single algorithm in an afternoon.
 - **The human side.** How early-career researchers build the skills agents now cover for them, and how projects plan for AI access that may become rationed or more expensive.
+
+Added after the [November 2 working session]({{ '/seasons/2026-27/events/2026-11-02-panel-summary-discussion/' | relative_url }}).
+
+- **Helped by scale, or obsoleted by scale?** A test for which AI-related investments will last as agent capability improves.
+- **Build versus reuse.** Agents make it cheaper both to write your own algorithm and to adopt an existing library. Which effect wins, and what it means for how libraries position themselves.
+- **Regenerating software from specifications.** The minimum specification an agent needs to rebuild a software product, organized as domain, system, environment and usability requirements.
+- **Agentic workflows and agent costs.** Users supplying their own agent resources, distributing pre-generated artifacts, and treating agent-generated code as a derived product.
