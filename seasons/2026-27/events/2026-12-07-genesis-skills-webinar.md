@@ -4,9 +4,9 @@ type: talk
 date: 2026-12-07T12:00
 duration_minutes: 60
 people:
-  - name: TBD
+  - name: Matt Baughman
     role: presenter
-    affiliation: Genesis Skills
+    affiliation: Genesis Skills · PPPL
   - name: Mike Heroux
     role: moderator
 description: >
@@ -19,3 +19,7 @@ description: >
 Background:
 
 - [Genesis Skills repository](https://gitlab.osti.gov/genesis/genesis-skills). The catalog covers HPC systems and schedulers, data movement and metadata, AI-system evaluation and safety, literature search, multi-agent systems and plasma simulation. It works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI and LangChain Deep Agents.
+
+## About the speaker
+
+Matt Baughman is an Associate Computational Scientist in the AI4Science group at the U.S. Department of Energy's Princeton Plasma Physics Laboratory (PPPL), and architect of Genesis Agent Skills, the DOE Genesis Mission's recently released collection of skills for AI agents. Matt is also part of the ModCon BASE team.
