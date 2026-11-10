@@ -10,7 +10,7 @@ people:
   - name: Mike Heroux
     role: moderator
 description: >
-  A speaker from the Genesis Mission's Genesis Skills effort introduces its catalog of
+  Matt Baughman, architect of the Genesis Mission's Genesis Skills effort, introduces its catalog of
   reusable agent skills for scientific and engineering work: what the skills cover, how
   they are structured and shared across agent clients, and what the effort has learned
   about encoding domain expertise for agents.
